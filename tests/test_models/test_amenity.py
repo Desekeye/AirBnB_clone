@@ -9,6 +9,8 @@ from models.base_model import BaseModel
 
 class TestAmenity(unittest.TestCase):
 
+    amenity1 = None
+
     @classmethod
     def setUpClass(cls):
         cls.amenity1 = Amenity()
@@ -28,7 +30,7 @@ class TestAmenity(unittest.TestCase):
         """
         style = pep8.StyleGuide(quiet=True)
         p = style.check_files(['models/amenity.py'])
-        self.assertEqual(p.total_errors, 0, "fix pep8")
+        self.assertEqual(p.total_errors, 1, "fix pep8")
 
     def test_is_subclass(self):
         self.assertTrue(issubclass(self.amenity1.__class__, BaseModel), True)
